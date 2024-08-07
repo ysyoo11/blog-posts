@@ -2,13 +2,13 @@
 title: 'Mastering useRef in React: Best Practices and Use Cases'
 date: '2023-11-26'
 tags: ['React']
-image: 'https://raw.githubusercontent.com/ysyoo11/blog-posts/main/images/thumbnails/master-useref.jpg'
+image: 'https://raw.githubusercontent.com/ysyoo11/blog-posts/main/images/master-useref/thumbnail.jpg'
 readTime: '7'
 ---
 
 React's useRef hook is a versatile tool that goes beyond just accessing DOM elements. It provides a way to persist values across renders without triggering a re-render itself. In this blog post, we'll dive into the proper usage of useRef in React, covering its fundamentals, common use cases, and best practices.
 
-# What is `useRef`?
+## What is `useRef`?
 
 `useRef` is a hook that returns a mutable ref object. This object has a property `.current` that is initialized to the passed argument. The value inside `.current` persists for the lifetime of the component.
 
@@ -22,7 +22,7 @@ function MyComponent() {
 }
 ```
 
-# Accessing DOM Elements
+## Accessing DOM Elements
 
 The most common use of `useRef` is to access DOM elements directly. Unlike traditional DOM manipulation, this is more in line with React's principles.
 
@@ -43,11 +43,11 @@ function TextInputWithFocusButton() {
 }
 ```
 
-# Storing Mutable Values
+## Storing Mutable Values
 
 `useRef` is also used to store any mutable value. Unlike `useState`, updating a ref does not cause a re-render.
 
-## Example: Keeping Track of Previous State
+### Example: Keeping Track of Previous State
 
 ```jsx
 function Counter() {
@@ -68,7 +68,7 @@ function Counter() {
 
 In this example, `prevCountRef` stores the previous count value across renders.
 
-# Best Practices for Using `useRef`
+## Best Practices for Using `useRef`
 
 1. Avoid Overusing Refs: Use useRef only when necessary. Prefer useState or useReducer for state management that affects rendering.
 
@@ -78,12 +78,12 @@ In this example, `prevCountRef` stores the previous count value across renders.
 
 4. Do Not Store The useRef Object in State: This is an anti-pattern and can lead to unexpected behavior.
 
-# Common Pitfalls
+## Common Pitfalls
 
 - Confusing useRef with useState: Remember, useRef is for values that you want to persist without causing re-renders.
 - Forgetting to Use .current: Always use the .current property to access the ref's value.
 
-# Conclusion
+## Conclusion
 
 `useRef` is a powerful hook in React's arsenal. By understanding its capabilities and limitations, you can use it to manage DOM references, persist values across renders, and perform imperative actions in a way that aligns with React's paradigms.
 
